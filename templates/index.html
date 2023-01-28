@@ -3,25 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <title>Email Spam Classifier</title>
+    <style>
+        h1 {text-align: center;}
+        form {text-align: center;}
+        div {text-align: center;}
+        body {background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);}
+        textarea {
+            background-color: #dddddd;
+            color: darkgrey;
+            padding: 1em;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            outline: none
+        }
+        input {
+            background-color: #5783db;
+            padding: 1em;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            outline: none
+        }
+        
+
+        </style>
 </head>
+
 <body>
+ <div id="grid"></div>
+
+
+   
+
 
     <h1>Email Spam Classfier</h1>
 
-    {% if label %}
-        {% if label == 1 %}
-            <h2 style="color:red">Spam</h2>
-        {% else %}
-            <h2 style="color:green">Not Spam</h2>
-        {% endif %}
 
+ <div>    {% if label %}
+    {% if label == 1 %}
+        <h2 style="color:red">Spam</h2>
+    {% else %}
+        <h2 style="color:green">Not Spam</h2>
     {% endif %}
+
+{% endif %}
+  </div>
+
 
     <form action="/predict" method="post">
         <label>Enter Email</label><br>
-        <textarea rows="20" cols="100" name="email"></textarea><br>
-        <input class="btn btn-primary" type="submit" value="Predict">
+        <textarea class="textarea" rows="20" cols="100" name="email"></textarea><br>
+        <input button class="btn btn-primary"  type="submit" value="Predict">
     </form>
+   
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Spam Classifier</title>
+    <style>
+        h1 {text-align: center;}
+        form {text-align: center;}
+        div {text-align: center;}
+        body {background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);}
+        textarea {
+            background-color: #dddddd;
+            color: darkgrey;
+            padding: 1em;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            outline: none
+        }
+        input {
+            background-color: #5783db;
+            padding: 1em;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            outline: none
+        }
+        
+
+        </style>
+</head>
+
+<body>
+ <div id="grid"></div>
+
+
+   
+
+
+    <h1>Email Spam Classfier</h1>
+
+
+ <div>    {% if label %}
+    {% if label == 1 %}
+        <h2 style="color:red">Spam</h2>
+    {% else %}
+        <h2 style="color:green">Not Spam</h2>
+    {% endif %}
+
+{% endif %}
+  </div>
+
+
+    <form action="/predict" method="post">
+        <label>Enter Email</label><br>
+        <textarea class="textarea" rows="20" cols="100" name="email"></textarea><br>
+        <input button class="btn btn-primary"  type="submit" value="Predict">
+    </form>
+   
 
 </body>
 </html>
